@@ -9,7 +9,7 @@ const priceElements = document.querySelectorAll(".price");
 
 let total = 0;
 priceElements.forEach((priceElement)=>{
-	const price = parseFloat(priceElements.textContent)
+	const price = parseFloat(priceElement.textContent)
 	total = total + price;
 })
 
@@ -17,7 +17,11 @@ const table = document.querySelector("table");
 const totalRow = document.createElement("tr");
 const totalCell = document.createElement("td");
 
-totalCell.textContent = `Total Price: ${total}`;
+totalCell.id = "ans";
+totalCell.colSpan = 2;
+totalCell.textContent = total;
+
+// totalCell.textContent = `Total Price: ${total}`;
 	totalRow.appendChild(totalCell);
 	table.appendChild(totalRow); 
 };
